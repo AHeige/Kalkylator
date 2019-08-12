@@ -81,7 +81,7 @@ window.onload = function () {
         x = [];
     }
 
-    //under här är för senare tillfälle när implementering av multi + division
+    //funktionerna multiplication och division skall implementeras vid ett senare tillfälle
     
     function multiplication() {
         var a = parseFloat(document.getElementById('nr1').value);
