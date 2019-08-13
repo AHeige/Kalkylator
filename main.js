@@ -1,102 +1,75 @@
 window.onload = function () {
     
-    /*document.getElementById("subtr").addEventListener("click", subtraction);
-    document.getElementById("multi").addEventListener("click", multiplication);
-    document.getElementById("divis").addEventListener("click", division);*/
-    document.getElementById("addit").addEventListener("click", numberPlus);
-    document.getElementById("subtr").addEventListener("click", numberMinus);
     document.getElementById("equal").addEventListener("click", finish);
 
-    var x = [];
-    var plus = document.getElementById("addit");
-    var minus = document.getElementById("subtr");
-    var check = 0;
-    var answer = document.getElementById("answer");
+    let x = []; // bug-maker...
+    let operName = ['add', 'sub', 'mul', 'div']
+    let answer = document.getElementById("answer");
+
+    for (let i = 0; i < operName.length; i++){
+        let btn = document.getElementById(operName[i])
+        btn.addEventListener("click", fetchNumber)
+    }
+
+    function fetchNumber(){
+        let num = parseFloat(document.getElementById("nr1").value);
+        x.push(num);
+        answer.innerHTML = x[0] + ' ' + this.value
+        toggleActiveOperator(this)
+        focusInput();
+        clearInput();
+    }
 
     function focusInput(){
-        let f = document.getElementById("nr1");
-        f.focus();
+        document.getElementById("nr1").focus();
     }
 
     function clearInput(){
-        let f = document.getElementById("nr1");
-        f.value = ("");
+        document.getElementById("nr1").value = ("")
     }
 
-    function addActive(activeclass){
-        console.log(check);
-        var a = document.getElementById(activeclass);
-        if (check == "addit"){
-            a.classList.add("active");
-            minus.classList.remove("active");
-        }else
-        if (check == "subtr"){
-            a.classList.add("active");
-            plus.classList.remove("active");
+    function toggleActiveOperator(buttonNode){
+        clearActive()
+        buttonNode.classList.add('active')
+    }
+
+    function clearActive() {
+        let all = document.getElementsByClassName('oper')
+        for (let i = 0; i < all.length; i++){
+            all[i].classList.remove('active')
         }
     }
 
-    function clearClass() {
-       plus.classList.remove("active");
-       minus.classList.remove("active");
-    }
-
-    function numberPlus(){
-        var nr1 = parseFloat(document.getElementById("nr1").value);
-        x.push(nr1);
-        answer.innerHTML = x[0] + " +";
-        b = "addit";
-        check = b;
-        addActive(b);
-        focusInput();
-        clearInput();
-    }
-
-    function numberMinus(){
-        var nr1 = parseFloat(document.getElementById("nr1").value);
-        x.push(nr1);
-        answer.innerHTML = x[0] + " -";
-        b = "subtr";
-        check = b;
-        addActive(b);
-        focusInput();
-        clearInput();
-    }
-
     function finish(){
-        var nr2 = parseFloat(document.getElementById("nr1").value);
-        x.push(nr2);
-            var c = document.getElementById('answer');
-            if (plus.classList.contains("active")){
-                let k = x[0] + x[1];
-                c.innerHTML = x[0] + " + " + x[1] + " = " + k;
-            }else
-            if (minus.classList.contains("active")){
-                let k = x[0] - x[1];
-                c.innerHTML = x[0] + " - " + x[1] + " = " + k;
-            }
-        focusInput();
-        clearInput();
-        clearClass();
-        x = [];
+        let num = parseFloat(document.getElementById("nr1").value)
+        x.push(num);
+        let c = document.getElementById('answer')
+        let active = document.getElementsByClassName('active')[0]
+        if (active){
+            c.innerHTML = x[0] + ' ' + active.value + ' ' + x[1] + " = " + calc(x[0], x[1], active.value)
+        }
+        focusInput()
+        clearInput()
+        clearActive()
+        x = []
     }
 
-    //funktionerna multiplication och division skall implementeras vid ett senare tillfälle
-    
-    function multiplication() {
-        var a = parseFloat(document.getElementById('nr1').value);
-        var b = parseFloat(document.getElementById('nr2').value);
-        var c = document.getElementById('answer');
-        var d = a * b;
-        c.innerHTML = "Ditt svar:<br>" + d;
+    function calc (a, b, operator) {
+        switch (operator) {
+            case '+':
+                return a + b
+            case '-':
+                return a - b
+            case '/':
+                if (b === 0){
+                    return NaN
+                }
+                return a / b
+            case '*':
+                return a * b
+            default:
+                console.error('Unvalid operator: ' + operator)
+                return NaN
+        }
     }
-
-    function division() {
-        var a = parseFloat(document.getElementById('nr1').value);
-        var b = parseFloat(document.getElementById('nr2').value);
-        var c = document.getElementById('answer');
-        var d = a / b;
-        c.innerHTML = "Ditt svar:<br>" + d;
-    }
-
 }
