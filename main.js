@@ -23,15 +23,10 @@ window.onload = function () {
             if(y.length < 1){
                 p.value = nr;
                 y.push(nr);
-                console.log("if")
                 return;
-            } else
+            }else
                 p.value = y.join('') + nr;
-                console.log("to string: "+y.join(''));
                 y.push(nr)
-                console.log("else")
-                console.log("y length: "+y.length)
-                console.log("k is: "+k);
     }
 
     for (let i = 0; i < operName.length; i++){
@@ -43,7 +38,6 @@ window.onload = function () {
         let num = parseFloat(document.getElementById("nr1").value);
         x.push(num);
         answer.innerHTML = x[0] + ' ' + this.innerHTML;
-        console.log(this);
         toggleActiveOperator(this)
         focusInput();
         clearYarr();
