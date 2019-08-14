@@ -56,6 +56,11 @@ input[type=submit]:hover, input[type=reset]:hover{
 #answer{
     /* border-bottom: 1px solid; */
     font-size: 1em;
+    float: left;
+    width: 200px;
+    min-height: 30px;
+    border-bottom: 1px solid #4CAF50;
+    margin-left: 5px;
 }
 
 hr{

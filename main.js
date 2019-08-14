@@ -2,6 +2,7 @@ window.onload = function () {
     
     document.getElementById("equal").addEventListener("click", finish);
     document.getElementById("col-ac").addEventListener("click", clearInput);
+    document.getElementById("col-ac").addEventListener("click", clearYarr);
 
     let x = []; // bug-maker...
     let operName = ['add', 'sub', 'mul', 'div']
@@ -67,7 +68,6 @@ window.onload = function () {
 
     function clearInput(){
         document.getElementById("nr1").value = ("")
-        clearYarr();
     }
 
     function clearYarr(){
@@ -89,14 +89,18 @@ window.onload = function () {
     function finish(){
         let num = parseFloat(document.getElementById("nr1").value)
         x.push(num);
+        let d = document.getElementById("nr1")
         let c = document.getElementById('answer')
         let active = document.getElementsByClassName('active')[0]
+        console.log(calc(x[0], x[1], active.value));
         if (active){
             c.innerHTML = x[0] + ' ' + active.value + ' ' + x[1] + " = " + calc(x[0], x[1], active.value)
+            d.value = calc(x[0], x[1], active.value)
         }
         focusInput()
-        /*clearInput()*/
         clearActive()
+        //clearInput();
+        clearYarr();
         x = []
     }
 
