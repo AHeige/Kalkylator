@@ -1,19 +1,38 @@
 body {
-    text-align: center;
-    background-color: #ffffff;
+    text-align: left;
+    background-color: #ffffec;
     font-family: 'Open Sans', sans-serif;
+    max-width: 300px;
+    
+}
+
+#form{
+    float:left;
 }
 
 input[type=number] {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    box-shadow: 1px;
-    background-color: #4CAF50;
+    float: left;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    margin: 0;
+    background-color: #999998;
     border: none;
-    color: #fff;
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 3em;
+    font-weight: 100;
+    width: 221px;
+    border-radius: 6px 6px 0 0;
+    //height: 30px;
+    outline: none;
+    border: none;
+    color: transparent;
+    text-shadow: 0 0 0 white;
+}
+
+input[type=number]::placeholder {
+    color: white;
+    font-weight: 100;
 }
 
 input[type=button], input[type=submit], input[type=reset]{
@@ -34,7 +53,7 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
 }
 
 .active{
-    background-color: #575757;
+    background-color: #999998;
 }
 
 
@@ -87,7 +106,7 @@ input::-webkit-inner-spin-button {
     font-size: 22px;
     border-style: solid;
     border-width: 1px;
-    border-color: slategray;
+    border-color: #999998;
     background-color:#f5f5f0;
     margin: 0px;
     padding: 10px 23px;
@@ -101,17 +120,18 @@ input::-webkit-inner-spin-button {
     font-size: 22px;
     border-style: solid;
     border-width: 1px;
-    border-color: slategray;
+    border-color: #999998;
     background-color:#f5f5f0;
     margin: 0px;
     padding: 10px 23px;
     width: 68px;
+    border-bottom-left-radius: 6px;
     //max-width: 10px;
 }
 
 #column-equal, #column-plus, #column-minus,
 #column-x, #column-div{
-    background-color: #ff9400;
+    background-color: #f39331;
     color: #ffffff;
 }
 
@@ -119,3 +139,6 @@ input::-webkit-inner-spin-button {
     font-size: 18px;
 }
 
+#column-equal{
+    border-bottom-right-radius: 6px;
+}

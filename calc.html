@@ -8,19 +8,12 @@
 	</head>
 	<body>
 		<p><b> Heige's Kalkylator - ver 1.3-MacLayout</p></b>
-	        <form id="form">
-            	<input type="number" id="nr1" value="" autofocus>
-					<br><br>
-				<input type="button" value="+" id="add" class="oper">
-                <input type="button" value="-" id="sub" class="oper">
-                <input type="button" value="*" id="mul" class="oper">
-				<input type="button" value="/" id="div" class="oper">
-				<input type="button" value="=" id="equal">
-				
-				<!-- <input type="reset" value="Rensa"> -->
-			</form>
-			<p id="answer"></p>
 		<div id="calc-wrap">
+				<div id="row">
+					<div id="column-input">
+						<input type="number" id="nr1" placeholder ="0" value="" autofocus>
+					</div>
+				</div><!--End of row-->
 			<div id="row">
 					<div id="column-ac">AC</div>
 					<div id="column-opp">&plusmn;</div>
@@ -51,6 +44,19 @@
 					<div id="column-equal">=</div>
 			</div><!--End of row-->
 		</div><!-- End of calc-wrap -->
+	        <form id="form">
+            	<!--<input type="number" id="nr1" value="" autofocus>-->
+					<br><br>
+				<input type="button" value="+" id="add" class="oper">
+                <input type="button" value="-" id="sub" class="oper">
+                <input type="button" value="*" id="mul" class="oper">
+				<input type="button" value="/" id="div" class="oper">
+				<input type="button" value="=" id="equal">
+				
+				<!-- <input type="reset" value="Rensa"> -->
+			</form>
+			<p id="answer"></p>
+		
 	</body>
 	
 </html>
