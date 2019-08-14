@@ -87,6 +87,10 @@ window.onload = function () {
     }
 
     function finish(){
+        if (x.length < 1){
+            clearYarr();    
+            return;
+        }
         let num = parseFloat(document.getElementById("nr1").value)
         x.push(num);
         let d = document.getElementById("nr1")
