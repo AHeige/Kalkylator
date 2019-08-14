@@ -1,12 +1,14 @@
 window.onload = function () {
     
     document.getElementById("equal").addEventListener("click", finish);
+    document.getElementById("col-ac").addEventListener("click", clearInput);
 
     let x = []; // bug-maker...
     let operName = ['add', 'sub', 'mul', 'div']
     let numPad = ['col-0','col-1', 'col-2', 'col-3', 
                     'col-4', 'col-5','col-6','col-7',
                     'col-8','col-9'];
+    let y = [];
     let answer = document.getElementById("answer");
 
     for (let i = 0; i < numPad.length; i++){
@@ -15,9 +17,21 @@ window.onload = function () {
     }
     
     function keyPress(){
-        let p = document.getElementById("nr1")
-        p.value = this.innerHTML;
-        console.log(this.innerHTML);
+        let p = document.getElementById("nr1");
+        let nr = this.innerHTML;
+        let k = y.length - 1;
+            if(y.length < 1){
+                p.value = nr;
+                y.push(nr);
+                console.log("if")
+                return;
+            } else
+                p.value = y.join('') + nr;
+                console.log("to string: "+y.join(''));
+                y.push(nr)
+                console.log("else")
+                console.log("y length: "+y.length)
+                console.log("k is: "+k);
     }
 
     for (let i = 0; i < operName.length; i++){
@@ -32,6 +46,7 @@ window.onload = function () {
         console.log(this);
         toggleActiveOperator(this)
         focusInput();
+        clearYarr();
         /*clearInput();*/
     }
 
@@ -41,6 +56,11 @@ window.onload = function () {
 
     function clearInput(){
         document.getElementById("nr1").value = ("")
+        clearYarr();
+    }
+
+    function clearYarr(){
+        y = [];
     }
 
     function toggleActiveOperator(buttonNode){
