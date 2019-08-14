@@ -10,16 +10,33 @@ window.onload = function () {
                     'col-8','col-9'];
     let y = [];
     let answer = document.getElementById("answer");
+    let cc;
 
     for (let i = 0; i < numPad.length; i++){
         let a = document.getElementById(numPad[i])
         a.addEventListener("click", keyPress)
     }
-    
+
+    function returnColorTime(){
+    setTimeout(send,50);
+    }
+
+    function send(){
+        returnColor(cc);
+    }
+
+    function returnColor(a){
+        $( a ).css("background-color", "#f5f5f0");
+    }
+
     function keyPress(){
         let p = document.getElementById("nr1");
+        let c = this;
         let nr = this.innerHTML;
         let k = y.length - 1;
+        this.style.backgroundColor = '#999998';
+        returnColorTime();
+        cc = c;
             if(y.length < 1){
                 p.value = nr;
                 y.push(nr);
