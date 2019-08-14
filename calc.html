@@ -2,11 +2,12 @@
 <html>
 	<head>
 		<title>Calcy - Heige</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="main.css">
-        <script src="main.js"></script>
+		<script src="main.js"></script>
 	</head>
 	<body>
-		<p><b> Heige's Kalkylator - ver 1.2-eprmod</p></b>
+		<p><b> Heige's Kalkylator - ver 1.3-MacLayout</p></b>
 	        <form id="form">
             	<input type="number" id="nr1" value="" autofocus>
 					<br><br>
@@ -19,7 +20,37 @@
 				<!-- <input type="reset" value="Rensa"> -->
 			</form>
 			<p id="answer"></p>
-			
+		<div id="calc-wrap">
+			<div id="row">
+					<div id="column-ac">AC</div>
+					<div id="column-opp">&plusmn;</div>
+					<div id="column-percent">%</div>
+					<div id="column-div">÷</div>
+			</div><!--End of row-->
+			<div id="row">
+				<div id="column-7">7</div>
+				<div id="column-8">8</div>
+				<div id="column-9">9</div>
+				<div id="column-x">x</div>
+			</div><!--End of row-->
+			<div id="row">
+					<div id="column-4">4</div>
+					<div id="column-5">5</div>
+					<div id="column-6">6</div>
+					<div id="column-minus">-</div>
+			</div><!--End of row-->
+			<div id="row">
+					<div id="column-1">1</div>
+					<div id="column-2">2</div>
+					<div id="column-3">3</div>
+					<div id="column-plus">+</div>
+			</div><!--End of row-->
+			<div id="row">
+					<div id="column-0">0</div>
+					<div id="column-dot">.</div>
+					<div id="column-equal">=</div>
+			</div><!--End of row-->
+		</div><!-- End of calc-wrap -->
 	</body>
 	
 </html>
