@@ -79,12 +79,12 @@ input::-webkit-inner-spin-button {
     //background-color: red;
 }
 
-#row, #column-1, #column-2, #column-3, 
-#column-4, #column-5, #column-6,
-#column-7, #column-8, #column-9,
-#column-0, 
-#column-dot, #column-ac,
-#column-opp, #column-percent{
+#row, #col-1, #col-2, #col-3, 
+#col-4, #col-5, #col-6,
+#col-7, #col-8, #col-9,
+#col-0, 
+#col-dot, #col-ac,
+#col-opp, #col-percent{
     float: left;
     min-height: 45px;
     cursor: pointer;
@@ -92,11 +92,11 @@ input::-webkit-inner-spin-button {
 
 
 
-#column-1, #column-2, #column-3, 
-#column-4, #column-5, #column-6,
-#column-7, #column-8, #column-9,
-#column-dot, #column-ac,
-#column-opp, #column-percent{
+#col-1, #col-2, #col-3, 
+#col-4, #col-5, #col-6,
+#col-7, #col-8, #col-9,
+#col-dot, #col-ac,
+#col-opp, #col-percent{
     font-weight: 400;
     font-size: 22px;
     border-style: solid;
@@ -109,7 +109,7 @@ input::-webkit-inner-spin-button {
     //max-width: 10px;
 }
 
-#column-0{
+#col-0{
     text-align: left;
     font-weight: 400;
     font-size: 22px;

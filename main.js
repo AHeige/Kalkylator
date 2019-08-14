@@ -4,7 +4,21 @@ window.onload = function () {
 
     let x = []; // bug-maker...
     let operName = ['add', 'sub', 'mul', 'div']
+    let numPad = ['col-0','col-1', 'col-2', 'col-3', 
+                    'col-4', 'col-5','col-6','col-7',
+                    'col-8','col-9'];
     let answer = document.getElementById("answer");
+
+    for (let i = 0; i < numPad.length; i++){
+        let a = document.getElementById(numPad[i])
+        a.addEventListener("click", keyPress)
+    }
+    
+    function keyPress(){
+        let p = document.getElementById("nr1")
+        p.value = this.innerHTML;
+        console.log(this.innerHTML);
+    }
 
     for (let i = 0; i < operName.length; i++){
         let btn = document.getElementById(operName[i])
@@ -18,7 +32,7 @@ window.onload = function () {
         console.log(this);
         toggleActiveOperator(this)
         focusInput();
-        clearInput();
+        /*clearInput();*/
     }
 
     function focusInput(){
@@ -50,7 +64,7 @@ window.onload = function () {
             c.innerHTML = x[0] + ' ' + active.value + ' ' + x[1] + " = " + calc(x[0], x[1], active.value)
         }
         focusInput()
-        clearInput()
+        /*clearInput()*/
         clearActive()
         x = []
     }
