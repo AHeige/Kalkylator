@@ -14,7 +14,8 @@ window.onload = function () {
     function fetchNumber(){
         let num = parseFloat(document.getElementById("nr1").value);
         x.push(num);
-        answer.innerHTML = x[0] + ' ' + this.value
+        answer.innerHTML = x[0] + ' ' + this.innerHTML;
+        console.log(this);
         toggleActiveOperator(this)
         focusInput();
         clearInput();
