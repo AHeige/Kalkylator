@@ -3,7 +3,13 @@ window.onload = function () {
     document.getElementById("item-equ").addEventListener("click", finish);
     document.getElementById("item-ac").addEventListener("click", clearInput);
     document.getElementById("item-ac").addEventListener("click", clearYarr);
+    document.getElementById("item-ac").addEventListener("click", clearXarr);
     document.addEventListener("keydown", keyDown, false);
+    document.getElementById("nr1").addEventListener("input", whenInput);
+
+function whenInput(){
+    console.log("input happening");
+}
 
 function keyDown(e) {
     let i = e.keyCode;
@@ -95,10 +101,15 @@ function keyDown(e) {
 
     function clearInput(){
         document.getElementById("nr1").value = ("")
+        document.getElementById("answer").innerHTML = ("")
     }
 
     function clearYarr(){
         y = [];
+    }
+
+    function clearXarr(){
+        x = [];
     }
 
     function toggleActiveOperator(buttonNode){
@@ -132,7 +143,7 @@ function keyDown(e) {
         clearActive()
         //clearInput();
         clearYarr();
-        x = []
+        clearXarr();
     }
 
     function calc (a, b, operator) {
